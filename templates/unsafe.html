@@ -1,0 +1,49 @@
+{{define "unsafe.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Login Form</title>
+</head>
+<body>
+    <form action="/postform" method="POST">
+        <section style="background-color: #eee;">
+            <div class="container my-5 py-5">
+              <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 col-lg-10 col-xl-8">
+                      <div class="card">
+                        <div class="card-body"> 
+                          {{ if .username }}
+                          <p>Your username and password are: {{ .username }} and {{ .password }}</p>
+                          {{ end }}
+    
+                        <!-- Username input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="username" class="form-control" placeholder="Enter Username" name="username" required/>
+                            <label class="form-label" for="username">Username</label>
+                          </div>
+                        
+                          <!-- Password input -->
+                          <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" placeholder="Enter Password" name="password" required/>
+                            <label class="form-label" for="password">Password</label>
+                          </div>
+       <!-- Submit button -->
+       <button type="submit" class="btn btn-primary btn-block mb-4">POST without CSRF check</button>
+    </form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> 
+</body>
+</html>
+{{ end }}
